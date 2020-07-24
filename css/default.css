@@ -417,4 +417,12 @@ h6 {
         justify-content: center;
     }
 
+    #preview {
+        width: 100%;
+    }
+
+    #preview-shadow {
+        width: 70%;
+    }
+
 }
