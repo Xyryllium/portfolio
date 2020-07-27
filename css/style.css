@@ -150,12 +150,15 @@ header #toggle:after {
 
 #navigation.active {
     right: 0;
+    flex-direction: column;
 }
 
 #navigation ul {
     position: relative;
     display: flex;
     flex-direction: column;
+
+    padding-top: 20vh;
 }
 
 #navigation ul li {

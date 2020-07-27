@@ -4,4 +4,9 @@ function toggle() {
     sec.classList.toggle('active');
     nav.classList.toggle('active');
 
+    if (nav.classList.contains('active')) {
+        nav.style.display = "flex";
+    } else {
+        nav.style.display = "none";
+    }
 }
