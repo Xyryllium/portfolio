@@ -45,6 +45,7 @@
 .post-intro {
     color: #4b5156;
     font-size: 14px;
+    padding: 10px 0;
 }
 
 .post a {
@@ -52,4 +53,16 @@
     text-decoration: none;
     font-size: 1.2em;
     font-weight: 500;
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.align-center {
+    align-items: center;
 }
