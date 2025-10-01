@@ -4,7 +4,16 @@ export function Introduction() {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="flex justify-center">
-                <img src="/img/me.webp" alt="Xyryl Aranza" className="rounded-2xl w-80 h-80 md:w-96 md:h-96 object-cover shadow-2xl" />
+                <img
+                    src="/img/me.webp"
+                    srcSet="/img/me-320.webp 320w, /img/me-384.webp 384w, /img/me-640.webp 640w, /img/me-768.webp 768w"
+                    sizes="(max-width: 768px) 320px, 384px"
+                    alt="Xyryl Aranza"
+                    className="rounded-2xl w-80 md:w-96 aspect-[3/4] object-cover shadow-2xl"
+                    fetchPriority="high"
+                    width="384"
+                    height="512"
+                />
             </div>
             <div className="flex justify-center">
                 <div className="text-left max-w-lg">

@@ -18,6 +18,9 @@ export function ProjectCard({ title, description, technologies, image, liveUrl, 
                         src={image}
                         alt={title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        loading="lazy"
+                        width="400"
+                        height="192"
                     />
                 ) : (
                     <div className="w-full h-full flex items-center justify-center">

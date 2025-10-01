@@ -1,6 +1,10 @@
 import type { Route } from "./+types/home";
 import { Portfolio } from "../portfolio/portfolio";
 
+export const links: Route.LinksFunction = () => [
+  { rel: "preload", href: "/img/me-original.webp", as: "image", type: "image/webp" },
+];
+
 export function meta({ }: Route.MetaArgs) {
   return [
     { title: "Xyryl Aranza - Full Stack Developer | PHP, Laravel, React" },
