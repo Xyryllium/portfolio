@@ -13,7 +13,9 @@ export function meta({ }: Route.MetaArgs) {
     { property: "og:url", content: "https://xyrylaranza.dev" },
     { property: "og:title", content: "Xyryl Aranza - Full Stack Developer" },
     { property: "og:description", content: "Full Stack Developer specializing in PHP, Laravel, React, and modern web technologies. 5+ years of experience building scalable applications." },
-    { property: "og:image", content: "https://xyrylaranza.dev/img/me.webp" },
+    { property: "og:image", content: "https://xyrylaranza.dev/img/og-image.webp" },
+    { property: "og:image:width", content: "1200" },
+    { property: "og:image:height", content: "630" },
     { property: "og:image:alt", content: "Xyryl Aranza - Full Stack Developer" },
     { property: "og:image:type", content: "image/webp" },
     { property: "og:site_name", content: "Xyryl Aranza Portfolio" },
@@ -23,7 +25,7 @@ export function meta({ }: Route.MetaArgs) {
     { name: "twitter:url", content: "https://xyrylaranza.dev" },
     { name: "twitter:title", content: "Xyryl Aranza - Full Stack Developer" },
     { name: "twitter:description", content: "Full Stack Developer specializing in PHP, Laravel, React, and modern web technologies." },
-    { name: "twitter:image", content: "https://xyrylaranza.dev/img/me.webp" },
+    { name: "twitter:image", content: "https://xyrylaranza.dev/img/og-image.webp" },
   ];
 }
 
