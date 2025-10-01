@@ -229,6 +229,67 @@ function CarouselNext({
   )
 }
 
+function CarouselDots({ className, ...props }: React.ComponentProps<"div">) {
+  const { api } = useCarousel()
+  const [selectedIndex, setSelectedIndex] = React.useState(0)
+  const [scrollSnaps, setScrollSnaps] = React.useState<number[]>([])
+
+  const onDotClick = React.useCallback(
+    (index: number) => {
+      if (!api) return
+      api.scrollTo(index)
+    },
+    [api]
+  )
+
+  const onInit = React.useCallback((api: CarouselApi) => {
+    if (!api) return
+    setScrollSnaps(api.scrollSnapList())
+  }, [])
+
+  const onSelect = React.useCallback((api: CarouselApi) => {
+    if (!api) return
+    setSelectedIndex(api.selectedScrollSnap())
+  }, [])
+
+  React.useEffect(() => {
+    if (!api) return
+
+    onInit(api)
+    onSelect(api)
+    api.on("reInit", onInit)
+    api.on("reInit", onSelect)
+    api.on("select", onSelect)
+
+    return () => {
+      api?.off("select", onSelect)
+    }
+  }, [api, onInit, onSelect])
+
+  return (
+    <div
+      data-slot="carousel-dots"
+      className={cn("flex justify-center gap-2 mt-4", className)}
+      {...props}
+    >
+      {scrollSnaps.map((_, index) => (
+        <button
+          key={index}
+          type="button"
+          className={cn(
+            "size-2 rounded-full transition-all duration-300",
+            index === selectedIndex
+              ? "bg-blue-600 dark:bg-blue-400 w-8"
+              : "bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500"
+          )}
+          onClick={() => onDotClick(index)}
+          aria-label={`Go to slide ${index + 1}`}
+        />
+      ))}
+    </div>
+  )
+}
+
 export {
   type CarouselApi,
   Carousel,
@@ -236,4 +297,5 @@ export {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
+  CarouselDots,
 }

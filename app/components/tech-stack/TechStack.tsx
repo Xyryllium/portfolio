@@ -4,6 +4,7 @@ import {
     Carousel,
     CarouselContent,
     CarouselItem,
+    CarouselDots,
 } from "~/components/ui/carousel";
 import { techStackData } from "~/data/techStackData";
 import { TechCategory } from "./TechCategory";
@@ -41,7 +42,7 @@ export function TechStack() {
                             </CarouselItem>
                         ))}
                     </CarouselContent>
-
+                    <CarouselDots />
                 </Carousel>
             </div>
         </div>
