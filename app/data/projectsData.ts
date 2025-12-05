@@ -13,5 +13,13 @@ export const projects: ProjectProps[] = [
         ],
         featured: true,
     },
+    {
+        title: "Polymarket Bot",
+        description: "Automated Trading & Wallet Monitoring Platform for Polymarket",
+        technologies: ["Node.js", "Discord.js", "TypeScript", "Ethers.js", "Polymarket CLOB Client", "PM2", "AWS"],
+        image: "/img/projects/polymarket-bot.webp",
+        githubUrl:  "https://github.com/Xyryllium/polymarket-tracker-bot",
+        featured: true,
+    },
 ];
 
